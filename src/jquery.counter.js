@@ -1,13 +1,9 @@
-/**
+/*
+ * jQuery.counter plugin
  *
- *
- *
- *
- *
- *
+ * Copyright (c) 2012 Sophilabs <contact@sophilabs.com>
+ * MIT License
  */
-
-//TODO: add on stop event
 
 (function($){
     $.fn.counter = function(options) {
