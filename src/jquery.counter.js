@@ -72,12 +72,12 @@
             var e = $(this);
             var data = e.data('counter') || {};
             //WARN: Don't use parseInt => parseInt('09') == 0
-            data.interval = parseFloat(e.data('interval') || options.interval || '1000');
-            data.down = (e.data('direction') || options.direction || 'down') == 'down';
+            data.interval = parseFloat(options.interval || e.data('interval') || '1000');
+            data.down = ( options.direction || e.data('direction') || 'down') == 'down';
             data.parts = [];
             var initial = e.text().split(/([^0-9]+)/);
-            var format = (e.data('format') || options.format || "23:59:59").split(/([^0-9]+)/);
-            var stop = e.data('stop') || options.stop;
+            var format = ( options.format || e.data('format') ||"23:59:59").split(/([^0-9]+)/);
+            var stop =  options.stop || e.data('stop');
             if (stop) {
                 stop = stop.split(/([^0-9]+)/);
             }

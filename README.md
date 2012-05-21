@@ -10,3 +10,12 @@ Support
 * Custom stop and stop event
 * Custom digits image
 * Custom animations (css3)
+
+Example
+=======
+10 seconds countdown:
+
+    <span class="counter" data-direction="down">0:10</span>
+    <script>
+        $('.counter').counter();
+    </script>
