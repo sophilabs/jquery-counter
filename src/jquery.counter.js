@@ -68,12 +68,13 @@
             var e = $(this);
             var data = e.data('counter') || {};
             //WARN: Don't use parseInt => parseInt('09') == 0
-            data.interval = parseFloat(options.interval || e.data('interval') || '1000');
-            data.down = ( options.direction || e.data('direction') || 'down') == 'down';
+            data.interval = parseFloat(options.interval || e.attr('data-interval') || '1000');
+            data.down = ( options.direction || e.attr('data-direction') || 'down') == 'down';
             data.parts = [];
             var initial = (options.initial || e.text()).split(/([^0-9]+)/);
-            var format = (options.format || e.data('format') ||"23:59:59").split(/([^0-9]+)/);
-            var stop =  options.stop || e.data('stop');
+            //WARN: Use attr() no data()
+            var format = (options.format || e.attr('data-format') ||"23:59:59").split(/([^0-9]+)/);
+            var stop =  options.stop || e.attr('data-stop');
             if (stop) {
                 stop = stop.split(/([^0-9]+)/);
             }
@@ -89,7 +90,7 @@
                     part.stop = parseFloat(stop ? stop[stop.length - format.length + index] : (data.down ? 0 : part.limit));
                     part.stop = part.stop > part.limit ? part.limit : part.stop;
                     part.stop = part.stop < 0 ? 0 : part.stop;
-                    var epart = $('<span>').addClass('part');
+                    var epart = $('<span>').addClass('part').addClass('part' + index);
                     var digits = part.value + '';
                     while (digits.length < part.padding) {
                         digits = '0' + digits;
@@ -100,7 +101,7 @@
                     e.append(epart);
                     data.parts.push(part);
                 } else {
-                    e.append($('<span>').addClass('separator').text(value));
+                    e.append($('<span>').addClass('separator').addClass('separator' + index).text(value));
                 }
             });
             if (!checkStop(data)) {
