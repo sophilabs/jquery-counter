@@ -1,4 +1,7 @@
 # jQuery.counter (javascript + css3)
+
+![jQuery Counter](http://i.imgur.com/ub7D9.png)
+
 A jQuery counter based on http://code.google.com/p/jquery-countdown with more options.
 
 
