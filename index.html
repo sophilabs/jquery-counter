@@ -7,20 +7,20 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="jquery.counter.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="jquery.counter.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1>jquery-counter</h1>
         <p>jQuery.counter (javascript + css3)</p>
-
         <p class="view"><a href="https://github.com/sophilabs/jquery-counter">View the Project on GitHub <small>sophilabs/jquery-counter</small></a></p>
-
-
         <ul>
           <li><a href="https://github.com/sophilabs/jquery-counter/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/sophilabs/jquery-counter/tarball/master">Download <strong>TAR Ball</strong></a></li>
@@ -30,25 +30,42 @@
       <section>
         <h1>jQuery.counter (javascript + css3)</h1>
 
-<p><img src="http://i.imgur.com/ub7D9.png" alt="jQuery Counter"></p>
+    <p>
+        <span class="counter" data-direction="down">0:10</span>
+    </p>
+    <p>
+        <span class="counter" data-direction="up" data-interval="1" data-format="9999" data-stop="2012">0</span>
+    </p>
+    <p>
+        <span class="counter" data-direction="up" data-format="23:59:59.9" data-stop="00:00:10.0" data-interval="100">0:00.0</span>
+    </p>
+    <p>
+        <span class="counter" data-direction="up" data-format="1 1 1 1 1 1 1 1" data-stop="0 0 1 0 0 0 0 0" data-interval="100">0</span>
+    </p>
+    <script>
+      $('.counter').counter();
+    </script>
 
-<p>A jQuery counter based on <a href="http://code.google.com/p/jquery-countdown">http://code.google.com/p/jquery-countdown</a> with more options.</p>
+    <p>A jQuery counter based on <a href="http://code.google.com/p/jquery-countdown">http://code.google.com/p/jquery-countdown</a> with more options.</p>
 
-<h2>Options</h2>
+    <h2>Options</h2>
 
-<p>Options can be set by attribute <code>data-&lt;name&gt;="value"</code> or in the options hash on counter initialization: <code>$(element).counter({name: value, ...})</code></p>
+    <p>Options can be set by attribute <code>data-&lt;name&gt;="value"</code> or in the options hash on counter initialization: <code>$(element).counter({name: value, ...})</code></p>
 
-<p><strong><code>direction: up|down</code></strong> Counter direction</p>
+    <p><strong><code>direction: up|down</code></strong> Counter direction - <em>default: <code>down</code></em></p>
 
-<p><strong><code>format: string</code></strong> Defines the format and the limit for each part - <em>e.g: 23:59:59</em></p>
+    <p><strong><code>format: string</code></strong> Defines the format and the limit for each part - <em>default: <code>23:59:59</code></em></p>
 
-<p><strong><code>interval: number</code></strong> Defines the time between each counter increment - <em>by default 1000 milliseconds</em></p>
+    <p><strong><code>interval: number</code></strong> Defines the time between each counter increment - <em>default <code>1000</code> milliseconds</em></p>
 
-<p><strong><code>stop: string</code></strong> Defines the counter limit - <em>eg: 10:00 (ten minutes)</em></p>
+    <p><strong><code>stop: string</code></strong> Sets the counter stop number - <em>default: maximum number allowed by the format.</em></p>
 
-<h2>Events</h2>
+    <h2>Events</h2>
 
 <p><strong><code>counterStop</code></strong> Raised when the counter reach limit</p>
+<pre><code>$('.counter').on('counterStop', function() {
+    //code
+});</code></pre>
 
 <h2>Example</h2>
 
@@ -73,8 +90,7 @@
 <p>MIT License</p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/sophilabs">sophilabs</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p>This project is maintained by <a href="http://sophilabs.com">sophilabs</a></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
