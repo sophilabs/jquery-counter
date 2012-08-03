@@ -29,8 +29,8 @@
                 part.value += data.down ? -1 : 1;
                 if (data.down && part.value < 0) {
                     part.value = part.limit;
-                } else if (!data.down && part.value > part.limit) {
-                    part.value = 0;
+		} else if (!data.down && part.value > part.limit) {
+		    part.value = 0;
                 } else {
                     break;
                 }
@@ -80,7 +80,7 @@
             }
             e.html('');
             $.each(format, function(index, value) {
-                if (!isNaN(value)) {
+                if (/^\d+$/.test(value)) {
                     var part = {};
                     part.index = index;
                     part.padding = (value + '').length;
