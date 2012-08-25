@@ -52,7 +52,7 @@
                 while (digits.length < part.padding) {
                     digits = '0' + digits;
                 }
-                $.each(digits, function(j, digit) {
+                $.each(digits.split(''), function(j, digit) {
                     animate(e, i, j, digit)
                 });
                 i--;
@@ -60,7 +60,7 @@
         };
 
         var animate = function(e, ipart, idigit, digit) {
-            var edigit = $($(e.find('> span.part').get(ipart)).find('> span.digit').get(idigit));
+            var edigit = $($(e.children().get(ipart)).find('span.digit').get(idigit));
             edigit.attr('class', 'digit digit' + digit +  ' digit' + edigit.text() + digit).text(digit);
         };
 
