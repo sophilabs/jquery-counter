@@ -1,0 +1,25 @@
+{
+  "name": "jQuery.counter",
+  "author": "sophilabs <contact@sophilabs.com>",
+  "homepage": "http://sophilabs.github.com/jquery-counter/",
+  "version": "0.2",
+  "description": "A jQuery Counter Plugin.",
+  "keywords": [
+    "countdown",
+    "counter"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sophilabs/jquery-counter.git"
+  },
+  "dependencies": {
+    "jquery": ">= 1.7"
+  },
+  "devDependencies": {}
+}

@@ -4,8 +4,12 @@
  * Copyright (c) 2012 Sophilabs <contact@sophilabs.com>
  * MIT License
  */
+ 
+!(function (context, definition) {
+  if (typeof define == 'function' && typeof define.amd  == 'object') define(['jquery'], definition);
+  else definition(context['$']);
+}(this, function ($) {
 
-(function($){
     $.fn.counter = function(options) {
 
         options = options || {};
@@ -29,8 +33,8 @@
                 part.value += data.down ? -1 : 1;
                 if (data.down && part.value < 0) {
                     part.value = part.limit;
-		} else if (!data.down && part.value > part.limit) {
-		    part.value = 0;
+                } else if (!data.down && part.value > part.limit) {
+                    part.value = 0;
                 } else {
                     break;
                 }
@@ -53,14 +57,14 @@
                     digits = '0' + digits;
                 }
                 $.each(digits.split(''), function(j, digit) {
-                    animate(e, i, j, digit)
+                    animate(e, i, j, digit);
                 });
                 i--;
             }
         };
 
         var animate = function(e, ipart, idigit, digit) {
-            var edigit = $($(e.children().get(ipart)).find('span.digit').get(idigit));
+            var edigit = $($(e.children('span.part').get(ipart)).find('span.digit').get(idigit));
             edigit.attr('class', 'digit digit' + digit +  ' digit' + edigit.text() + digit).text(digit);
         };
 
@@ -72,7 +76,7 @@
             data.parts = [];
             var initial = (options.initial || e.text()).split(/([^0-9]+)/);
             //WARN: Use attr() no data()
-            var format = (options.format || e.attr('data-format') ||"23:59:59").split(/([^0-9]+)/);
+            var format = (options.format || e.attr('data-format') || "23:59:59").split(/([^0-9]+)/);
             var stop =  options.stop || e.attr('data-stop');
             if (stop) {
                 stop = stop.split(/([^0-9]+)/);
@@ -112,4 +116,4 @@
             return this;
         });
     };
-})(jQuery);
+}));
