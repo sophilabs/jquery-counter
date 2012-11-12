@@ -20,8 +20,14 @@
     vertical-align: middle;
     text-align: center;
     direction: ltr;
-    text-indent: -9000px;
     margin: 0;
+}
+
+.counter-analog2 span.part span.digit span.inner{
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  display: block;
 }
 
 .counter-analog span.part span.digit {
