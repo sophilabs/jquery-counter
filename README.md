@@ -25,13 +25,13 @@ Options can be set by attribute `data-<name>="value"` or in the options hash on 
 ## Example
 ### 10 seconds countdown:
 
-    <span class="counter">0:10</span>
+    <span class="counter counter-analog">0:10</span>
     <script>
         $('.counter').counter();
     </script>
 
 ### 120 seconds count:
-    <span class="counter" data-direction="up" data-format="120">0</span>
+    <span class="counter counter-analog" data-direction="up" data-format="120">0</span>
     <script>
         $('.counter').counter();
     </script>
