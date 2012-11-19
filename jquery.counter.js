@@ -1,7 +1,7 @@
 /*
  * jQuery.counter plugin
  *
- * Copyright (c) 2012 Sophilabs <contact@sophilabs.com>
+ * Copyright (c) 2012 Sophilabs <hi@sophilabs.com>
  * MIT License
  */
  
@@ -87,10 +87,10 @@
                     var part = {};
                     part.index = index;
                     part.padding = (value + '').length;
-                    part.limit = parseFloat(value);
-                    part.value = parseFloat(initial[initial.length - format.length + index] || 0);
+                    part.limit = parseInt(value, 10);
+                    part.value = parseInt(initial[initial.length - format.length + index] || 0, 10);
                     part.value = part.value > part.limit ? part.limit : part.value;
-                    part.stop = parseFloat(stop ? stop[stop.length - format.length + index] : (data.down ? 0 : part.limit));
+                    part.stop = parseInt(stop ? stop[stop.length - format.length + index] : (data.down ? 0 : part.limit), 10);
                     part.stop = part.stop > part.limit ? part.limit : part.stop;
                     part.stop = part.stop < 0 ? 0 : part.stop;
                     var epart = $('<span>').addClass('part').addClass('part' + index);
@@ -104,6 +104,7 @@
                     e.append(epart);
                     data.parts.push(part);
                 } else {
+                    alert(index);
                     e.append($('<span>').addClass('separator').addClass('separator' + index).text(value));
                 }
             });
