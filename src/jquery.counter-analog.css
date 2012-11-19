@@ -19,15 +19,10 @@
     width: 26px;
     vertical-align: middle;
     text-align: center;
-    direction: ltr;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
     margin: 0;
-}
-
-.counter-analog2 span.part span.digit span.inner{
-  width: 0px;
-  height: 0px;
-  overflow: hidden;
-  display: block;
 }
 
 .counter-analog span.part span.digit {
