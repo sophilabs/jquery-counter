@@ -1,0 +1,290 @@
+.counter-analog2 span.part {
+    display: inline-block;
+}
+
+.counter-analog2 span.separator {
+    display: inline-block;
+    height: 90px;
+    line-height: 90px;
+    width: 10px;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+}
+
+.counter-analog2 span.part span.digit {
+    display: inline-block;
+    height: 90px;
+    line-height: 90px;
+    width: 67px;
+    vertical-align: middle;
+    text-align: center;
+    direction: ltr;
+    margin: 0;
+}
+
+.counter-analog2 span.part span.digit span.inner{
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  display: block;
+}
+
+.counter-analog2 span.part span.digit {
+    background: transparent url("jquery.counter-analog2.png") 0 0 repeat-y;
+}
+
+.counter-analog2 span.part span.digit0 { background-position: 0     0; }
+.counter-analog2 span.part span.digit1 { background-position: 0  -540px; }
+.counter-analog2 span.part span.digit2 { background-position: 0  -1080px; }
+.counter-analog2 span.part span.digit3 { background-position: 0  -1620px; }
+.counter-analog2 span.part span.digit4 { background-position: 0  -2160px; }
+.counter-analog2 span.part span.digit5 { background-position: 0 -2700px; }
+.counter-analog2 span.part span.digit6 { background-position: 0 -3240px; }
+.counter-analog2 span.part span.digit7 { background-position: 0 -3780px; }
+.counter-analog2 span.part span.digit8 { background-position: 0 -4320px; }
+.counter-analog2 span.part span.digit9 { background-position: 0 -4860px; }
+
+/* UP */
+@-webkit-keyframes counter-analog2-01 { from { background-position:  0     0; }
+                               to {   background-position:  0  -540px; }}
+@-moz-keyframes counter-analog2-01 {    from { background-position:  0     0; }
+                               to {   background-position:  0  -540px; }}
+@-ms-keyframes counter-analog2-01 {     from { background-position:  0     0; }
+                               to { background-position:    0  -540px; }}
+
+@-webkit-keyframes counter-analog2-12 { from { background-position:  0  -540px; }
+                               to {   background-position:  0  -1080px; }}
+@-moz-keyframes counter-analog2-12 {    from { background-position:  0  -540px; }
+                               to {   background-position:  0  -1080px; }}
+@-ms-keyframes counter-analog2-12 {     from { background-position:  0  -540px; }
+                               to { background-position:    0  -1080px; }}
+
+@-webkit-keyframes counter-analog2-23 { from { background-position:  0  -1080px; }
+                               to {   background-position:  0  -1620px; }}
+@-moz-keyframes counter-analog2-23 {    from { background-position:  0  -1080px; }
+                               to {   background-position:  0  -1620px; }}
+@-ms-keyframes counter-analog2-23 {     from { background-position:  0  -1080px; }
+                               to { background-position:    0  -1620px; }}
+
+@-webkit-keyframes counter-analog2-34 { from { background-position:  0  -1620px; }
+                               to {   background-position:  0  -2160px; }}
+@-moz-keyframes counter-analog2-34 {    from { background-position:  0  -1620px; }
+                               to {   background-position:  0  -2160px; }}
+@-ms-keyframes counter-analog2-34 {     from { background-position:  0  -1620px; }
+                               to { background-position:    0  -2160px; }}
+
+@-webkit-keyframes counter-analog2-45 { from { background-position:  0  -2160px; }
+                               to {   background-position:  0  -2700px; }}
+@-moz-keyframes counter-analog2-45 {    from { background-position:  0  -2160px; }
+                               to {   background-position:  0  -2700px; }}
+@-ms-keyframes counter-analog2-45 {     from { background-position:  0  -2160px; }
+                               to { background-position:    0  -2700px; }}
+
+@-webkit-keyframes counter-analog2-56 { from { background-position:  0  -2700px; }
+                               to {   background-position:  0  -3240px; }}
+@-moz-keyframes counter-analog2-56 {    from { background-position:  0  -2700px; }
+                               to {   background-position:  0  -3240px; }}
+@-ms-keyframes counter-analog2-56 {     from { background-position:  0  -2700px; }
+                               to { background-position:    0  -3240px; }}
+
+@-webkit-keyframes counter-analog2-67 { from { background-position:  0  -3240px; }
+                               to {   background-position:  0  -3780px; }}
+@-moz-keyframes counter-analog2-67 {    from { background-position:  0  -3240px; }
+                               to {   background-position:  0  -3780px; }}
+@-ms-keyframes counter-analog2-67 {     from { background-position:  0  -3240px; }
+                               to { background-position:    0  -3780px; }}
+
+@-webkit-keyframes counter-analog2-78 { from { background-position:  0  -3780px; }
+                               to {   background-position:  0  -4320px; }}
+@-moz-keyframes counter-analog2-78 {    from { background-position:  0  -3780px; }
+                               to {   background-position:  0  -4320px; }}
+@-ms-keyframes counter-analog2-78 {     from { background-position:  0  -3780px; }
+                               to { background-position:    0  -4320px; }}
+
+@-webkit-keyframes counter-analog2-89 { from { background-position:  0  -4320px; }
+                               to {   background-position:  0  -4860px; }}
+@-moz-keyframes counter-analog2-89 {    from { background-position:  0  -4320px; }
+                               to {   background-position:  0  -4860px; }}
+@-ms-keyframes counter-analog2-89 {     from { background-position:  0  -4320px; }
+                               to { background-position:    0  -4860px; }}
+
+@-webkit-keyframes counter-analog2-90 { from { background-position:  0  -4860px; }
+                               to {   background-position:  0  -2400px; }}
+@-moz-keyframes counter-analog2-90 {    from { background-position:  0  -4860px; }
+                               to {   background-position:  0  -2400px; }}
+@-ms-keyframes counter-analog2-90 {     from { background-position:  0  -4860px; }
+                               to { background-position:    0  -2400px; }}
+
+.counter-analog2 span.part span.digit01 {
+    -webkit-animation: counter-analog2-01 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-01 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-01 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit12 {
+    -webkit-animation: counter-analog2-12 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-12 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-12 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit23 {
+    -webkit-animation: counter-analog2-23 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-23 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-23 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit34 {
+    -webkit-animation: counter-analog2-34 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-34 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-34 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit45 {
+    -webkit-animation: counter-analog2-45 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-45 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-45 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit56 {
+    -webkit-animation: counter-analog2-56 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-56 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-56 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit67 {
+    -webkit-animation: counter-analog2-67 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-67 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-67 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit78 {
+    -webkit-animation: counter-analog2-78 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-78 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-78 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit89 {
+    -webkit-animation: counter-analog2-89 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-89 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-89 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit90 {
+    -webkit-animation: counter-analog2-90 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-90 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-90 .3s steps(6, end) 1;
+}
+
+/* DOWN */
+@-webkit-keyframes counter-analog2-10 { from { background-position:  0  -540px; }
+                               to {   background-position:  0     0; }}
+@-moz-keyframes counter-analog2-10 {    from { background-position:  0  -540px; }
+                               to {   background-position:  0     0; }}
+@-ms-keyframes counter-analog2-10 {     from { background-position:  0  -540px; }
+                               to { background-position:    0     0; }}
+
+@-webkit-keyframes counter-analog2-21 { from { background-position:  0  -1080px; }
+                               to {   background-position:  0  -540px; }}
+@-moz-keyframes counter-analog2-21 {    from { background-position:  0  -1080px; }
+                               to {   background-position:  0  -540px; }}
+@-ms-keyframes counter-analog2-21 {     from { background-position:  0  -1080px; }
+                               to { background-position:    0  -540px; }}
+
+@-webkit-keyframes counter-analog2-32 { from { background-position:  0  -1620px; }
+                               to {   background-position:  0  -1080px; }}
+@-moz-keyframes counter-analog2-32 {    from { background-position:  0  -1620px; }
+                               to {   background-position:  0  -1080px; }}
+@-ms-keyframes counter-analog2-32 {     from { background-position:  0  -1620px; }
+                               to { background-position:    0  -1080px; }}
+
+@-webkit-keyframes counter-analog2-43 { from { background-position:  0  -2160px; }
+                               to {   background-position:  0  -1620px; }}
+@-moz-keyframes counter-analog2-43 {    from { background-position:  0  -2160px; }
+                               to {   background-position:  0  -1620px; }}
+@-ms-keyframes counter-analog2-43 {     from { background-position:  0  -2160px; }
+                               to { background-position:    0  -1620px; }}
+
+@-webkit-keyframes counter-analog2-54 { from { background-position:  0  -2700px; }
+                               to {   background-position:  0  -2160px; }}
+@-moz-keyframes counter-analog2-54 {    from { background-position:  0  -2700px; }
+                               to {   background-position:  0  -2160px; }}
+@-ms-keyframes counter-analog2-54 {     from { background-position:  0  -2700px; }
+                               to { background-position:    0  -2160px; }}
+
+@-webkit-keyframes counter-analog2-65 { from { background-position:  0  -3240px; }
+                               to {   background-position:  0  -2700px; }}
+@-moz-keyframes counter-analog2-65 {    from { background-position:  0  -3240px; }
+                               to {   background-position:  0  -2700px; }}
+@-ms-keyframes counter-analog2-65 {     from { background-position:  0  -3240px; }
+                               to { background-position:    0  -2700px; }}
+
+@-webkit-keyframes counter-analog2-76 { from { background-position:  0  -3780px; }
+                               to {   background-position:  0  -3240px; }}
+@-moz-keyframes counter-analog2-76 {    from { background-position:  0  -3780px; }
+                               to {   background-position:  0  -3240px; }}
+@-ms-keyframes counter-analog2-76 {     from { background-position:  0  -3780px; }
+                               to { background-position:    0  -3240px; }}
+
+@-webkit-keyframes counter-analog2-87 { from { background-position:  0  -4320px; }
+                               to {   background-position:  0  -3780px; }}
+@-moz-keyframes counter-analog2-87 {    from { background-position:  0  -4320px; }
+                               to {   background-position:  0  -3780px; }}
+@-ms-keyframes counter-analog2-87 {     from { background-position:  0  -4320px; }
+                               to { background-position:    0  -3780px; }}
+
+@-webkit-keyframes counter-analog2-98 { from { background-position:  0  -4860px; }
+                               to {   background-position:  0  -4320px; }}
+@-moz-keyframes counter-analog2-98 {    from { background-position:  0  -4860px; }
+                               to {   background-position:  0  -4320px; }}
+@-ms-keyframes counter-analog2-98 {     from { background-position:  0  -4860px; }
+                               to { background-position:    0  -4320px; }}
+
+@-webkit-keyframes counter-analog2-09 { from { background-position:  0  -2400px; }
+                               to {   background-position:  0  -4860px; }}
+@-moz-keyframes counter-analog2-09 {    from { background-position:  0  -2400px; }
+                               to {   background-position:  0  -4860px; }}
+@-ms-keyframes counter-analog2-09 {     from { background-position:  0  -2400px; }
+                               to { background-position:    0  -4860px; }}
+
+.counter-analog2 span.part span.digit10 {
+    -webkit-animation: counter-analog2-10 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-10 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-10 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit21 {
+    -webkit-animation: counter-analog2-21 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-21 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-21 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit32 {
+    -webkit-animation: counter-analog2-32 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-32 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-32 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit43 {
+    -webkit-animation: counter-analog2-43 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-43 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-43 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit54 {
+    -webkit-animation: counter-analog2-54 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-54 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-54 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit65 {
+    -webkit-animation: counter-analog2-65 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-65 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-65 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit76 {
+    -webkit-animation: counter-analog2-76 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-76 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-76 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit87 {
+    -webkit-animation: counter-analog2-87 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-87 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-87 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit98 {
+    -webkit-animation: counter-analog2-98 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-98 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-98 .3s steps(6, end) 1;
+}
+.counter-analog2 span.part span.digit09 {
+    -webkit-animation: counter-analog2-09 .3s steps(6, end) 1;
+    -moz-animation: counter-analog2-09 .3s steps(6, end) 1;
+    -ms-animation: counter-analog2-09 .3s steps(6, end) 1;
+}
