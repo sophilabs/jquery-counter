@@ -65,8 +65,6 @@
 
         var animate = function(e, ipart, idigit, digit) {
             var edigit = $($(e.children('span.part').get(ipart)).find('span.digit').get(idigit));
-            //edigit.attr('class', 'digit digit' + digit +  ' digit' + edigit.text() + digit);
-            //edigit.html($('<span>').addClass('inner').text(digit));
             edigit.attr('class', 'digit digit' + digit +  ' digit' + edigit.text() + digit).text(digit);
         };
 
