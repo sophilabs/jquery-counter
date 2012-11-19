@@ -68,7 +68,7 @@
             edigit.attr('class', 'digit digit' + digit +  ' digit' + edigit.text() + digit).text(digit);
         };
 
-        //from  http://blog.stevenlevithan.com/archives/cross-browser-split
+        //from http://blog.stevenlevithan.com/archives/cross-browser-split
         var split = function(undef) {
 
             var nativeSplit = String.prototype.split,
