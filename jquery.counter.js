@@ -84,6 +84,7 @@
             e.html('');
             $.each(format, function(index, value) {
                 if (/^\d+$/.test(value)) {
+alert(value);
                     var part = {};
                     part.index = index;
                     part.padding = (value + '').length;
@@ -104,7 +105,6 @@
                     e.append(epart);
                     data.parts.push(part);
                 } else {
-                    alert(index);
                     e.append($('<span>').addClass('separator').addClass('separator' + index).text(value));
                 }
             });
