@@ -20,9 +20,9 @@
     vertical-align: middle;
     text-align: center;
     direction: ltr;
-    /*text-indent: 9000px;
-    //text-transform: capitalize;*/
-    line-height: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
     margin: 0;
 }
 
