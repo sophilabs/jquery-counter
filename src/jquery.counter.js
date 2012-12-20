@@ -177,9 +177,9 @@
                     while (digits.length < part.padding) {
                         digits = '0' + digits;
                     }
-                    $.each(digits, function(i, digit) {
-                        epart.append($('<span>').addClass('digit digit' + digit).text(digit));
-                    });
+                    for(var i=0; i < digits.length; i++) {
+                        epart.append($('<span>').addClass('digit digit' + digits.charAt(i)).text(digits.charAt(i)));
+                    }
                     e.append(epart);
                     data.parts.push(part);
                 } else {
