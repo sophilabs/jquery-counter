@@ -61,17 +61,43 @@
 
     <p>Options can be set by attribute <code>data-&lt;name&gt;="value"</code> or in the options hash on counter initialization: <code>$(element).counter({name: value, ...})</code></p>
 
-    <p><strong><code>direction: up|down</code></strong> Counter direction - <em>default: <code>down</code></em></p>
+    <p><strong><code>direction: up|down</code></strong><br>Counter direction - <em>default: <code>down</code></em></p>
 
-    <p><strong><code>format: string</code></strong> Defines the format and the limit for each part - <em>default: <code>23:59:59</code></em></p>
+    <p><strong><code>format: string</code></strong><br>Defines the format and the limit for each part - <em>default: <code>23:59:59</code></em></p>
 
-    <p><strong><code>interval: number</code></strong> Defines the time between each counter increment - <em>default <code>1000</code> milliseconds</em></p>
+    <p><strong><code>interval: number</code></strong><br>Defines the time between each counter increment - <em>default <code>1000</code> milliseconds</em></p>
 
-    <p><strong><code>stop: string</code></strong> Sets the counter stop number - <em>default: maximum number allowed by the format.</em></p>
+    <p><strong><code>stop: string</code></strong><br>Sets the counter stop number - <em>default: maximum number allowed by the format.</em></p>
+
+<pre><code>&lt;span class="counter counter-analog"
+ data-direction="up" data-format="23:50" data-interval="1000"
+ data-stop="5:00"&gt;0&lt;/span&gt;
+&lt;script&gt;
+    $('.counter').counter();
+&lt;/script&gt;</pre></code>
+<pre><code>&lt;span&gt;&lt;/span&gt;
+&lt;script&gt;
+    $('span')
+      .addClass('counter', 'counter-analog')
+      .counter({
+        initial: "10:00"
+        direction: 'down',
+        format: "23:59",
+        interval: 1000,
+        stop: "5:00"
+      });
+&lt;/script&gt;</pre></code>
+
+    <h2>Methods</h2>
+
+    <p><strong><code>play</code></strong><br>Play counter</p>
+    <p><strong><code>reset</code></strong><br>Reset counter</p>
+    <p><strong><code>stop</code></strong><br>Stop counter</p>
+    <pre><code>$('.counter').counter('stop');</code></pre>
 
     <h2>Events</h2>
 
-<p><strong><code>counterStop</code></strong> Raised when the counter reach limit</p>
+<p><strong><code>counterStop</code></strong><br>Raised when the counter reach limit</p>
 <pre><code>$('.counter').on('counterStop', function() {
     //code
 });</code></pre>
