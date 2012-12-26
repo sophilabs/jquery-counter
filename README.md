@@ -18,6 +18,14 @@ Options can be set by attribute `data-<name>="value"` or in the options hash on 
 
 **`stop: string`** Defines the counter limit - _eg: 10:00 (ten minutes)_
 
+## Methods
+
+**`play`** Play counter
+
+**`reset`** Reset counter
+
+**`stop`** Stop counter
+
 ## Events
 
 **`counterStop`** Raised when the counter reach limit
