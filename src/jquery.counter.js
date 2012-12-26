@@ -149,7 +149,7 @@
                 var e = $(this);
                 var data = e.data('counter') || {};
                 data.interval = parseInt(options.interval || e.attr('data-interval') || '1000', 10);
-                data.down = ( options.direction || e.attr('data-direction') || 'down') == 'down';
+                data.down = (options.direction || e.attr('data-direction') || 'down') == 'down';
                 data.parts = [];
                 var initial = split(options.initial || e.text(), /([^0-9]+)/);
                 //WARN: Use attr() no data()
@@ -230,12 +230,12 @@
 
     $.fn.counter = function(method) {
         // Method calling logic
-        if ( methods[method] ) {
-            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-        } else if ( typeof method === 'object' || ! method ) {
-            return methods.init.apply( this, arguments );
+        if (methods[method]) {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === 'object' || ! method) {
+            return methods.init.apply(this, arguments);
         } else {
-            $.error( 'Method ' +  method + ' does not exist on jQuery.counter' );
+            $.error('Method ' +  method + ' does not exist on jQuery.counter');
         }
     };
 
