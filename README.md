@@ -19,6 +19,7 @@ Options can be set by attribute `data-<name>="value"` or in the options hash on 
 **`stop: string`** Defines the counter limit - _eg: 10:00 (ten minutes)_
 
 ## Methods
+Methods can be call using `$(element).counter('method')`
 
 **`play`** Play counter
 
