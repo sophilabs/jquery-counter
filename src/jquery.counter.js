@@ -9,16 +9,38 @@
   if (typeof define == 'function' && typeof define.amd  == 'object') define(['jquery'], definition);
   else definition(context['$']);
 }(this, function ($) {
-
     var checkStop = function(data) {
-        var stop = 0;
-        var current = 0;
-        $.each(data.parts, function(i, part) {
-            stop += (stop * part.limit) + part.stop;
-            current += (current * part.limit) + part.value;
-        });
-        return data.down ? stop >= current : stop <= current;
+        for (var i = 0; i < data.parts.length; i++) {
+            var part = data.parts[i];
+            if (data.gofast) {
+                if (part.stop != part.value) {
+                    return false;
+                }
+            }
+            if (data.down && part.stop < part.value) {
+                return false;
+            } else if (!data.down && part.stop > part.value) {
+                return false;
+            }
+        }
+        return true;
     };
+
+    var nth = function(i, n) {
+        var s = String(i)
+        return Number(s[s.length-(n+1)] || 0);
+    }
+
+    var count_steps = function(i, j) {
+        var s = String(i),
+            k = String(j),
+            sum = 0,
+            max = Math.max(s.length, k.length);
+        for (var z = 0; z < max; z++) {
+            sum += Math.abs(nth(s, z) - nth(k, z));
+        }
+        return sum;
+    }
 
     var tick = function() {
         var e = $(this);
@@ -26,19 +48,40 @@
         var i = data.parts.length - 1;
         while(i >= 0) {
             var part = data.parts[i];
-            part.value += data.down ? -1 : 1;
-            if (data.down && part.value < 0) {
-                part.value = part.limit;
-            } else if (!data.down && part.value > part.limit) {
-                part.value = 0;
+            if (data.gofast) {
+                var sum = "",
+                    v = part.value,
+                    s = part.stop,
+                    len = Math.max(String(part.value).length,
+                                   String(part.stop).length);
+                for (var j = 0; j < len; j++) {
+                    var snth = nth(s, j), vnth = nth(v, j);
+                    if (vnth > snth) {
+                        sum += String(vnth-1);
+                    } else if (vnth < snth) {
+                        sum += String(vnth+1);
+                    } else {
+                        sum += String(vnth);
+                    }
+                }
+                part.value = sum.split("").reverse().join("");
             } else {
-                break;
+                part.value += data.down ? -1 : 1;
+                if (data.down && part.value < 0) {
+                    part.value = part.limit;
+                } else if (!data.down && part.value > part.limit) {
+                    part.value = 0;
+                } else {
+                    break;
+                }
             }
             i--;
         }
-        refresh(e, i);
+        refresh(e, 0);
         if (checkStop(data)) {
             clearInterval(data.intervalId);
+            data.intervalId = 0;
+            data.gofast = false;
             e.trigger("counterStop");
         }
     };
@@ -224,6 +267,31 @@
                 clearInterval(data.intervalId);
                 data.intervalId = 0;
                 e.trigger("counterStop");
+            });
+        },
+        gofast: function(target, interval) {
+            return this.each(function() {
+                var e = $(this),
+                    data = e.data('counter'),
+                    proceed = true;
+                $.each(data.parts, function(i, e) {
+                    if (e.limit < target) {
+                        proceed = false;
+                        return false;
+                    }
+                    e.stop = target;
+                });
+                if (!proceed) {
+                    return;
+                }
+                data.gofast = true;
+
+                var steps = 0;
+                $.each(data.parts, function(_, e) { steps += count_steps(e.value, target); });
+                data.interval = Math.max(interval / steps, 1);
+                if (!data.intervalId) {
+                    data.intervalId = setInterval($.proxy(tick, this), data.interval);
+                }
             });
         }
     };
