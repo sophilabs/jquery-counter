@@ -4,7 +4,7 @@
  * Copyright (c) 2012 Sophilabs <hi@sophilabs.com>
  * MIT License
  */
- 
+
 !(function (context, definition) {
   if (typeof define == 'function' && typeof define.amd  == 'object') define(['jquery'], definition);
   else definition(context['$']);
@@ -18,6 +18,17 @@
             current += (current * part.limit) + part.value;
         });
         return data.down ? stop >= current : stop <= current;
+    };
+
+    var isFired = false;
+    var checkFire = function(data) {
+      var fire = 0;
+      var current = 0;
+      $.each(data.parts, function(i, part) {
+        fire += (fire * part.limit) + part.fire;
+        current += (current * part.limit) + part.value;
+      });
+      return data.down ? fire >= current : fire <= current;
     };
 
     var tick = function() {
@@ -36,10 +47,17 @@
             }
             i--;
         }
+
         refresh(e, i);
+
         if (checkStop(data)) {
             clearInterval(data.intervalId);
             e.trigger("counterStop");
+        }
+
+        if (!isFired && checkFire(data)) {
+          e.trigger("counterFire");
+          isFired = true;
         }
     };
 
@@ -158,6 +176,10 @@
                 if (stop) {
                     stop = split(stop, /([^0-9]+)/);
                 }
+                var fire =  options.fire || e.attr('data-fire');
+                if (fire) {
+                  fire = split(fire, /([^0-9]+)/);
+                }
                 e.html('');
                 $.each(format, function(index, value) {
                     if (/^\d+$/.test(value)) {
@@ -168,9 +190,15 @@
                         part.value = parseInt(initial[initial.length - format.length + index] || 0, 10);
                         part.value = part.value > part.limit ? part.limit : part.value;
                         part.reset = part.value;
+
                         part.stop = parseInt(stop ? stop[stop.length - format.length + index] : (data.down ? 0 : part.limit), 10);
                         part.stop = part.stop > part.limit ? part.limit : part.stop;
                         part.stop = part.stop < 0 ? 0 : part.stop;
+
+                        part.fire = parseInt(fire ? fire[fire.length - format.length + index] : (data.down ? 0 : part.limit), 10);
+                        part.fire = part.fire > part.limit ? part.limit : part.fire;
+                        part.fire = part.fire < 0 ? 0 : part.fire;
+
                         var epart = $('<span>').addClass('part').addClass('part' + index);
                         var digits = part.value + '';
                         while (digits.length < part.padding) {
@@ -185,11 +213,17 @@
                         e.append($('<span>').addClass('separator').addClass('separator' + index).text(value));
                     }
                 });
+
                 if (!checkStop(data)) {
                     data.intervalId = setInterval($.proxy(tick, this), data.interval);
                 } else {
                     e.trigger("counterStop");
                 }
+
+                if (!isFired && checkFire(data)) {
+                  e.trigger("counterFire");
+                }
+
                 e.data('counter', data);
                 return this;
             });
