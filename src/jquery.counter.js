@@ -22,13 +22,13 @@
 
     var isFired = false; // Whether counterFire is fired
     var checkFire = function(data) {
-      var fire = 0;
-      var current = 0;
-      $.each(data.parts, function(i, part) {
-        fire += (fire * part.limit) + part.fire;
-        current += (current * part.limit) + part.value;
-      });
-      return data.down ? fire >= current : fire <= current;
+        var fire = 0;
+        var current = 0;
+        $.each(data.parts, function(i, part) {
+            fire += (fire * part.limit) + part.fire;
+            current += (current * part.limit) + part.value;
+        });
+        return data.down ? fire >= current : fire <= current;
     };
 
     var tick = function() {
@@ -56,24 +56,24 @@
         }
 
         if (!isFired && checkFire(data)) {
-          var current = 0,
-              currentStr = '',
-              n = data.parts.length;
-          $.each(data.parts, function(i, part) {
-            current += (current * part.limit) + part.value;
+            var current = 0,
+                currentStr = '',
+                n = data.parts.length;
+            $.each(data.parts, function(i, part) {
+                current += (current * part.limit) + part.value;
 
-            var digits = part.value + '';
-            while (digits.length < part.padding) {
-                digits = '0' + digits;
-            }
-            currentStr += digits;
-            if (i + 1 < n) {
-              currentStr += ':';
-            }
-          });
+                var digits = part.value + '';
+                while (digits.length < part.padding) {
+                    digits = '0' + digits;
+                }
+                currentStr += digits;
+                if (i + 1 < n) {
+                    currentStr += ':';
+                }
+            });
 
-          e.trigger('counterFire', [current, currentStr]);
-          isFired = true;
+            e.trigger('counterFire', [current, currentStr]);
+            isFired = true;
         }
     };
 
@@ -236,7 +236,7 @@
                 }
 
                 if (!isFired && checkFire(data)) {
-                  e.trigger("counterFire");
+                    e.trigger("counterFire");
                 }
 
                 e.data('counter', data);
