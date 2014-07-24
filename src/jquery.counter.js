@@ -20,7 +20,7 @@
         return data.down ? stop >= current : stop <= current;
     };
 
-    var isFired = false;
+    var isFired = false; // Whether counterFire is fired
     var checkFire = function(data) {
       var fire = 0;
       var current = 0;
@@ -52,11 +52,27 @@
 
         if (checkStop(data)) {
             clearInterval(data.intervalId);
-            e.trigger("counterStop");
+            e.trigger('counterStop');
         }
 
         if (!isFired && checkFire(data)) {
-          e.trigger("counterFire");
+          var current = 0,
+              currentStr = '',
+              n = data.parts.length;
+          $.each(data.parts, function(i, part) {
+            current += (current * part.limit) + part.value;
+
+            var digits = part.value + '';
+            while (digits.length < part.padding) {
+                digits = '0' + digits;
+            }
+            currentStr += digits;
+            if (i + 1 < n) {
+              currentStr += ':';
+            }
+          });
+
+          e.trigger('counterFire', [current, currentStr]);
           isFired = true;
         }
     };
@@ -190,7 +206,6 @@
                         part.value = parseInt(initial[initial.length - format.length + index] || 0, 10);
                         part.value = part.value > part.limit ? part.limit : part.value;
                         part.reset = part.value;
-
                         part.stop = parseInt(stop ? stop[stop.length - format.length + index] : (data.down ? 0 : part.limit), 10);
                         part.stop = part.stop > part.limit ? part.limit : part.stop;
                         part.stop = part.stop < 0 ? 0 : part.stop;
