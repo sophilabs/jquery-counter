@@ -22,7 +22,6 @@
   "ignore": [
     "*/.*",
     "*.json",
-    "src",
     "examples",
     "*.md"
   ]
