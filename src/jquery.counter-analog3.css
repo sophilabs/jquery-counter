@@ -30,15 +30,15 @@
 }
 
 .counter-analog3 span.part span.digit0 { background-position: 0 0; }
-.counter-analog3 span.part span.digit1 { background-position: 0 -+270px; }
-.counter-analog3 span.part span.digit2 { background-position: 0 -+540px; }
-.counter-analog3 span.part span.digit3 { background-position: 0 -+810px; }
-.counter-analog3 span.part span.digit4 { background-position: 0 -+1080px; }
-.counter-analog3 span.part span.digit5 { background-position: 0 -+1350px; }
-.counter-analog3 span.part span.digit6 { background-position: 0 -+1620px; }
-.counter-analog3 span.part span.digit7 { background-position: 0 -+1890px; }
-.counter-analog3 span.part span.digit8 { background-position: 0 -+2160px; }
-.counter-analog3 span.part span.digit9 { background-position: 0 -+2430px; }
+.counter-analog3 span.part span.digit1 { background-position: 0 -270px; }
+.counter-analog3 span.part span.digit2 { background-position: 0 -540px; }
+.counter-analog3 span.part span.digit3 { background-position: 0 -810px; }
+.counter-analog3 span.part span.digit4 { background-position: 0 -1080px; }
+.counter-analog3 span.part span.digit5 { background-position: 0 -1350px; }
+.counter-analog3 span.part span.digit6 { background-position: 0 -1620px; }
+.counter-analog3 span.part span.digit7 { background-position: 0 -1890px; }
+.counter-analog3 span.part span.digit8 { background-position: 0 -2160px; }
+.counter-analog3 span.part span.digit9 { background-position: 0 -2430px; }
 
 /* UP */
 @-webkit-keyframes counter-analog3-01 { from { background-position:  0     0; }
