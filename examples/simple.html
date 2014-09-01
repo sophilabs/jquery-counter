@@ -7,12 +7,13 @@
 
     <link href="../src/jquery.counter-analog.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="../src/jquery.counter-analog2.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../src/jquery.counter-analog3.css" media="screen" rel="stylesheet" type="text/css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
     <script src="../src/jquery.counter.js" type="text/javascript"></script>
 
 </head>
-<body>
+<body style="background-color: #d77;">
     <h1>Examples</h1>
     <p>
         <span class="counter counter-analog" data-direction="down">0:10</span>
@@ -60,6 +61,18 @@
     $('.counter').counter({});
     &lt;/script&gt;
     </pre>
+
+    <h1>Style counter-analog3</h1>
+    <p>
+        <span class="counter counter-analog3" data-direction="up" data-format="23:59:59.9" data-stop="00:00:10.0" data-interval="100">0:00.0</span>
+    </p>
+    <pre>
+    &lt;span class="counter counter-analog3" data-direction="up" data-format="23:59:59.9" data-stop="00:00:10.0" data-interval="100"&gt;0:00.0&lt;/span&gt;
+    &lt;script&gt;
+    $('.counter').counter({});
+    &lt;/script&gt;
+    </pre>
+
     <h1>Full Javascript Initialization</h1>
     <p>
         <span id="custom"></span>

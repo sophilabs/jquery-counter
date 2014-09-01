@@ -1,0 +1,30 @@
+{
+  "name": "jquery-counter",
+  "description": "A jQuery Counter Plugin.",
+  "version": "0.2.0",
+  "keywords": [ "countdown", "counter" ],
+  "homepage": "http://sophilabs.github.com/jquery-counter/",
+  "authors": [
+    { "name": "sophilabs", "email": "contact@sophilabs.com" }
+  ],
+  "dependencies": {
+    "jquery" : ">= 1.7"
+  },
+  "devDependencies": {},
+  "license": "MIT",
+  "main": [
+    "./src/jquery.counter.js",
+    "./src/jquery.counter-analog.css",
+    "./src/jquery.counter-analog.png",
+    "./src/jquery.counter-analog2.png",
+    "./src/jquery.counter-analog2.css",
+    "./src/jquery.counter-analog3.png",
+    "./src/jquery.counter-analog3.css"
+  ],
+  "ignore": [
+    "*/.*",
+    "*.json",
+    "examples",
+    "*.md"
+  ]
+}
