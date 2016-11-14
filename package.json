@@ -2,7 +2,7 @@
   "name": "jQuery.counter",
   "author": "sophilabs <contact@sophilabs.com>",
   "homepage": "http://sophilabs.github.com/jquery-counter/",
-  "version": "0.2",
+  "version": "0.2.0",
   "description": "A jQuery Counter Plugin.",
   "keywords": [
     "countdown",
