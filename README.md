@@ -47,7 +47,7 @@ Methods can be call using `$(element).counter('method')`
     
 ## License
 jQuery.counter is Copyright (c) 2017 sophilabs, inc. It is free software, and may be
-redistributed under the terms specified in the `license <./LICENSE>`__ file.
+redistributed under the terms specified in the [license](/LICENSE) file.
 
 ## About
 
