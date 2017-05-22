@@ -225,7 +225,25 @@
                 data.intervalId = 0;
                 e.trigger("counterStop");
             });
-        }
+        },
+		setCount: function(count) {
+			count = count+'' || 0;
+			if(count.length){
+				return this.each(function() {
+					var e = $(this);
+					var data = e.data('counter');
+					var countB = (new Array((data.parts.length - count.length)+1).join(' ') + count).split('');
+					if(!countB.length)
+						return;
+					$.each(data.parts, function(pindex, pvalue){
+						pvalue.stop = parseInt((countB[pindex]==' ') ? pvalue.reset : countB[pindex], 10);
+					});
+					if (data.intervalId)
+						clearInterval(data.intervalId);
+					data.intervalId = setInterval($.proxy(tick, this), data.interval);
+				});
+			}
+		}
     };
 
     $.fn.counter = function(method) {
